@@ -79,9 +79,13 @@ function readAllData() {
 }
            
          function addData() {
+            var idPerson=document.getElementById("idPerson");
+            var namePerson=document.getElementById("namePerson");
+            var agePerson=document.getElementById("agePerson");
+                
    var request = db.transaction(["student"], "readwrite")
    .objectStore("student")
-   .add({ id: "01", name: "Suresh", age: 19});
+   .add({ id: idPerson.value, name: namePerson.value, age: agePerson.value});
      
    request.onsuccess = function(event) {
       alert("New Record has been added to your database.");
@@ -107,7 +111,14 @@ function readAllData() {
        
    </head>
    <body>
-       
+      <label for="idPerson">Number</label>
+        <input type="number" name="idPerson" id="idPerson" min="1"  value="1">
+            <label for="namePerson">Name</label>
+      <input type="text" name="namePerson" id="namePerson">
+       <label for="idPerson">Age</label>
+      
+        <input type="number" name="agePerson" id="agePerson" min="1" >
+
       <button onclick="readData()">Read </button>
       <button onclick="readAllData()">Read All</button>
       <button onclick="addData()">Add Data</button>
