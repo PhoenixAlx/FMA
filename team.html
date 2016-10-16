@@ -1,17 +1,117 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Title of the document</title>
-	</head>
- 
-	<body>
-		
-		<p><button onclick="deletedb()">DBDelete</button></p>
-		<p><button onclick="getProductByKey(1)">GetProduct By Key</button></p>
-		<p><button onclick="getProductByName('product1')">GetProduct By Name</button></p>
-		
-		<script src="index.js"></script>
-	</body>
- 
+   <head>
+    
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <script type="text/javascript">
+          
+           
+         window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+           
+         //prefixes of window.IDB objects
+         window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
+         window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange
+           
+         if (!window.indexedDB) {
+            window.alert("Your browser doesn't support a stable version of IndexedDB.");
+         }
+           
+       const studentData = [
+   { id: "01", name: "Suresh", age: 19},
+   { id: "02", name: "Mahesh", age: 17},
+   { id: "03", name: "Ramesh", age: 18}
+];
+         var db;
+         var request = window.indexedDB.open("newDatabase", 1);
+           
+         request.onerror = function(event) {
+            console.log("error: ");
+         };
+           
+         request.onsuccess = function(event) {
+            db = request.result;
+            console.log("success: "+ db);
+         };
+           
+         request.onupgradeneeded = function(event) {
+            var db = event.target.result;
+            var objectStore = db.createObjectStore("student", {keyPath: "id"});
+              
+            for (var i in studentData) {
+               objectStore.add(studentData[i]);
+            }
+         }
+           
+         function readData() {
+   var transaction = db.transaction(["student"]);
+   var objectStore = transaction.objectStore("student");
+   var request = objectStore.get("01");
+     
+   request.onerror = function(event) {
+      alert("Unable to retrieve data from database!");
+   };
+     
+   request.onsuccess = function(event) {
+      if(request.result) {
+         alert("Name: " + request.result.name + ", Age: " + request.result.age);
+      }
+        
+      else {
+         alert("Record not found in database!");
+      }
+   };
+}
+  
+function readAllData() {
+   var objectStore = db.transaction("student").objectStore("student");
+     
+   objectStore.openCursor().onsuccess = function(event) {
+      var cursor = event.target.result;
+        
+      if (cursor) {
+         alert("Name for id " + cursor.key + " is " + cursor.value.name + ", Age: " + cursor.value.age);
+         cursor.continue();
+      }      
+      else {
+         alert("No more records!");
+      }
+};
+}
+           
+         function addData() {
+   var request = db.transaction(["student"], "readwrite")
+   .objectStore("student")
+   .add({ id: "01", name: "Suresh", age: 19});
+     
+   request.onsuccess = function(event) {
+      alert("New Record has been added to your database.");
+   };
+     
+   request.onerror = function(event) {
+      alert("Unable to add data\r\nRecord is already exist in database! ");
+   }
+}
+       
+   
+  function removeData() {
+   var request = db.transaction(["student"], "readwrite")
+   .objectStore("student")
+   .delete("01");
+     
+   request.onsuccess = function(event) {
+      alert("Record has been deleted from your database.");
+   };
+  
+}
+      </script>
+       
+   </head>
+   <body>
+       
+      <button onclick="readData()">Read </button>
+      <button onclick="readAllData()">Read All</button>
+      <button onclick="addData()">Add Data</button>
+      <button onclick="removeData()">Delete </button>
+       
+   </body>
 </html>
