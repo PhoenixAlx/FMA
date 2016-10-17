@@ -21,12 +21,20 @@
    <head>
     
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/format.css" />
+
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/css/format.css" />
+    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap-datepicker.min.css" />
     <script type="text/javascript" src="../../lib/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="lib/js/driver.js"></script>
     <script type="text/javascript" src="../../lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../lib/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="../../lib/locales/bootstrap-datepicker.es.min.js"></script>
+    <script type="text/javascript" src="lib/js/driver.js"></script>
+
+    
+    
+
     <title>Football Manager Associaton</title>
        
    </head>
@@ -34,19 +42,30 @@
        <div class="container theme-showcase" role="main">
             <div class="page-header">
                 <h1 class="text-center titleApp"  ><span  class ="letterTitleApp"  >F</span><span  class="text-success" >ootball</span> <span class ="letterTitleApp"  >M</span><span  class="text-success" >anager</span> <span  class ="letterTitleApp"  >A</span><span  class="text-success" >ssociation</span></h1>
-                <h2 class="text-center titleApp"  ><span  class="text-success" >Peñas</span> </h2>
+                <h2 class="text-center titleApp"  ><span  class="text-success" >Nueva Peña</span> </h2>
             </div>
             <p>
-            
-                <button type="button" class="btn btn-lg btn-primary btn-block  btn-lg"  onclick="goAction('new')"><span class ="sizeFontButtonApp">NUEVA</span></button>
+                <label for="textName" class ="sizeFontButtonApp">Nombre</label>   
+                <input type="text" name="textName" value=""  class=" btn-block  btn-lg ">
+                <input type="hidden" name="name" value="">
+                
             </p>
             <p>
-            
-                <button type="button" class="btn btn-lg btn-success btn-block  btn-lg "  onclick="goAction('edit')"><span class ="sizeFontButtonApp">EDITAR</span></button>
+                <label for="textDate" class ="sizeFontButtonApp">Fecha de creación</label>   
+                <div class="input-group date" data-provide="datepicker" id="divDate">
+                    <input type="text" name="textDate" id ="textDate" class="form-control btn-block  btn-lg "  >
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="date" value="">
+                
             </p>
+            
             <p>
             
-                <button type="button" class="btn btn-lg btn-info btn-block  btn-lg "  onclick="goAction('manage')"><span class ="sizeFontButtonApp">GESTIONAR</span></button>
+                <button type="button" class="btn btn-lg btn-success btn-block  btn-lg "  onclick="goModule('club')"><span class ="sizeFontButtonApp">GUARDAR</span></button>
             </p>
             <p>
             
