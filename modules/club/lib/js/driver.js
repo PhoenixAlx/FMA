@@ -44,6 +44,10 @@ function loadDatabase(){
     
     return db;
 }
+function goModule(nameModule){
+    window.open("../../modules/"+nameModule+"/index.html","_self");
+    return 0;
+}
 function goAction(nameAction){
     window.open(nameAction+".html","_self");
     return 0;
