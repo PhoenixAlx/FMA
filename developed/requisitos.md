@@ -28,6 +28,8 @@
 * Editar uno nuevo con opción de eliminar.
 * Clasificación global de integrantes, por nivel, puntos,puesto
 
+
+
 ## Módulo gestor de equipos
 
 ### Variables
@@ -80,5 +82,9 @@
 * Ver resumen contable.
 
 
+## Módulo Backup.
 
+### Pantallas
+* Guardar base de datos en un fichero
+* Cargar base de datos desde un fichero.
 
