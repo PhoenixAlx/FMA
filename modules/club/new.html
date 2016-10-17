@@ -46,26 +46,31 @@
             </div>
             <p>
                 <label for="textName" class ="sizeFontButtonApp">Nombre</label>   
-                <input type="text" name="textName" value=""  class=" btn-block  btn-lg ">
-                <input type="hidden" name="name" value="">
+                <input type="text" name="name" id="name" value=""  class=" btn-block  btn-lg ">
+                
                 
             </p>
             <p>
                 <label for="textDate" class ="sizeFontButtonApp">Fecha de creación</label>   
                 <div class="input-group date" data-provide="datepicker" id="divDate">
-                    <input type="text" name="textDate" id ="textDate" class="form-control btn-block  btn-lg "  >
+                    <input type="date" name="dateCreation" id ="dateCreation" class="form-control btn-block  btn-lg "  >
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
                 </div>
                 
-                <input type="hidden" name="date" value="">
+            
+                
+            </p>
+            <p id="errorMSG" name="errorMSG"  class="text-danger bg-danger sizeFontErrorApp">
+
+                
                 
             </p>
             
             <p>
             
-                <button type="button" class="btn btn-lg btn-success btn-block  btn-lg "  onclick="goModule('club')"><span class ="sizeFontButtonApp">GUARDAR</span></button>
+                <button type="button" class="btn btn-lg btn-success btn-block  btn-lg "  onclick="save()"><span class ="sizeFontButtonApp">GUARDAR</span></button>
             </p>
             <p>
             

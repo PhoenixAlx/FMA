@@ -16,8 +16,9 @@
  * 
  */
  function loadInit(){
-     $('#textDate').datepicker({
-    format: 'DD-MM-YYYY'});
+     $.fn.datepicker.defaults.format = "dd/mm/yyyy";
+     $('#dateCreation').datepicker({
+    });
 }
 function loadDatabase(){
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
@@ -57,12 +58,49 @@ function backPrincipal(){
     return 0;
 }
 window.onload=loadInit();
+function validate_date(dateInput){
+
+    var patron=new RegExp("^(19|20)+([0-9]{2})([-])([0-9]{1,2})([-])([0-9]{1,2})$");
+
+ 
+
+    if(dateInput.search(patron)==0)
+
+    {
+
+        var values=fecha.split("/");
+
+        if(isValidDate(values[2],values[1],values[0]))
+
+        {
+
+            return true;
+
+        }
+
+    }
+
+    return false;
+
+}
 function save(){
-    //
-    var db=loadDatabase();
-    var idPerson=document.getElementById("idPerson");
-            var namePerson=document.getElementById("namePerson");
+    //validate field, firs is not empty
+     var name=$('#name').val();
+     var dateCreation=$('#dateCreation').val();
+     var errorMSG=document.getElementById("errorMSG");
+     if ($.trim(name) == ""){
+         errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
+     }else if ($.trim(dateCreation) == ""){
+         errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
+     }else if ( validate_date(dateCreation)){
+         errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
+     }else{
+         errorMSG.innerHTML="";
+     }
+     /*       var namePerson=document.getElementById("namePerson");
             var agePerson=document.getElementById("agePerson");
+    var db=loadDatabase();
+   
                 
    var request = db.transaction(["student"], "readwrite")
    .objectStore("student")
@@ -74,7 +112,7 @@ function save(){
      
    request.onerror = function(event) {
       alert("Unable to add data\r\nRecord is already exist in database! ");
-   }
+   }*/
 }
 /*           
          request.onupgradeneeded = function(event) {
