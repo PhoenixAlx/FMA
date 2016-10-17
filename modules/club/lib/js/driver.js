@@ -17,7 +17,7 @@
  */
  function loadInit(){
      $('#textDate').datepicker({
-    format: 'DD-MM-YYYY',)});
+    format: 'DD-MM-YYYY'});
 }
 function loadDatabase(){
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
