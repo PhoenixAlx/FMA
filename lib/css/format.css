@@ -16,12 +16,13 @@
  * 
  */
 
-.panel{
-width()
+
+.tittleApp{
+font-size:5em;
 }
-.principalButton{
+.letterTitleApp{
+color:blue;
 }
-.b1{
-}
-.b2{
+.sizeFontButtonApp{
+font-size:4em;
 }
