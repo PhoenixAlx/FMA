@@ -1,5 +1,16 @@
 # Requisitos mínimos
 
+## Módulo gestor de Peñas
+
+### Variables
+* id_club
+* Nombre peña
+* Fecha creación peña
+
+### Pantallas
+* Creación de peña.
+* Edición de nombre o poder eliminarla.
+
 ## Módulo gestor de integrantes( fundamental)
 
 ### Variables
