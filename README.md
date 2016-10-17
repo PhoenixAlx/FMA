@@ -1,5 +1,5 @@
-# MFA
+# FMA
 
- Manager Football Association
+ Football Manager Association
 
 App web to manage a football association
