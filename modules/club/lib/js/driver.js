@@ -96,7 +96,8 @@ function save(){
          errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
      }else{
          errorMSG.innerHTML="";
-     }
+     }//validate name that it isn't on database
+     
      /*       var namePerson=document.getElementById("namePerson");
             var agePerson=document.getElementById("agePerson");
     var db=loadDatabase();
