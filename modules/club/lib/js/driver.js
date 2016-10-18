@@ -23,7 +23,7 @@
 	var res = mybase.exec("SELECT * FROM one");
 	console.log(res);
 	var data = [["Minsk",100000], ["Riga",200000]];
-	alasql("SELECT * INTO CSV('cities.csv') FROM ?",[data]);
+	alasql("SELECT * INTO CSV('cities.csv',{headers:true}) FROM ?",[data]);
     
 
     alert('Environment detected: ' + JSON.stringify({
