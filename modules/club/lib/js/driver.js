@@ -114,3 +114,4 @@ function save(){
 
 	var res = mybase.exec("SELECT * FROM one");
     */
+}
