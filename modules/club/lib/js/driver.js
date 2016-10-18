@@ -25,6 +25,16 @@
 	var data = [["Minsk",100000], ["Riga",200000]];
 	alasql("SELECT * INTO CSV('cities.csv') FROM ?",[data]);
     mybase.exec("SELECT * INTO CSV('prubq.csv') FROM one");
+    alert('Environment detected: ' + JSON.stringify({
+                                        alasqlPath: alasql.path,
+                                        isBrowser: alasql.utils.isBrowser,
+                                        isCordova: alasql.utils.isCordova,
+                                        isMeteor: alasql.utils.isMeteor,
+                                        isMeteorClient: alasql.utils.isMeteorClient,
+                                        isMeteorServer: alasql.utils.isMeteorServer,
+                                        isNode: alasql.utils.isNode,
+                                        isWebWorker: alasql.utils.isWebWorker
+                                    },null,4));
     // Insert two rows: (1,111) and (2,222)
     
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
