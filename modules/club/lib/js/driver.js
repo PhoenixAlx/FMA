@@ -16,6 +16,17 @@
  * 
  */
  function loadInit(){
+	var mybase = new alasql.Database('mybase');
+	mybase.exec('CREATE TABLE one (two INT)');
+	var insert2 = alasql.compile('INSERT INTO one values(?,?)','mybase');
+	insert2({a:1,b:2});
+	var res = mybase.exec("SELECT * FROM one");
+	console.log(res);
+	var data = [["Minsk",100000], ["Riga",200000]];
+	alasql("SELECT * INTO CSV('cities.csv') FROM ?",[data]);
+    mybase.exec("SELECT * INTO CSV('prubq.csv') FROM one");
+    // Insert two rows: (1,111) and (2,222)
+    
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
      $('#dateCreation').datepicker({
     });
