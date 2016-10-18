@@ -16,27 +16,7 @@
  * 
  */
  function loadInit(){
-	var mybase = new alasql.Database('mybase');
-	mybase.exec('CREATE TABLE one (two INT)');
-	var insert2 = alasql.compile('INSERT INTO one values(?,?)','mybase');
-	insert2({a:1,b:2});
-	var res = mybase.exec("SELECT * FROM one");
-	console.log(res);
-	var data = [["Minsk",100000], ["Riga",200000]];
-	alasql("SELECT * INTO CSV('cities.csv',{headers:true}) FROM ?",[data]);
-    
 
-    alert('Environment detected: ' + JSON.stringify({
-                                        alasqlPath: alasql.path,
-                                        isBrowser: alasql.utils.isBrowser,
-                                        isCordova: alasql.utils.isCordova,
-                                        isMeteor: alasql.utils.isMeteor,
-                                        isMeteorClient: alasql.utils.isMeteorClient,
-                                        isMeteorServer: alasql.utils.isMeteorServer,
-                                        isNode: alasql.utils.isNode,
-                                        isWebWorker: alasql.utils.isWebWorker
-                                    },null,4));
-     mybase.exec("SELECT * INTO CSV('prubq.csv') FROM one");
     // Insert two rows: (1,111) and (2,222)
     
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
@@ -107,6 +87,30 @@ function validate_date(dateInput){
 
 }
 function save(){
+    	var mybase = new alasql.Database('mybase');
+	mybase.exec('CREATE TABLE one (two INT)');
+	var insert2 = alasql.compile('INSERT INTO one values(?,?)','mybase');
+	insert2({a:1,b:2});
+	var res = mybase.exec("SELECT * FROM one");
+	console.log(res);
+	var data = [["Minsk",100000], ["Riga",200000]];
+	alasql("SELECT * INTO CSV('cities.csv',{headers:true}) FROM ?",[data]);
+    
+
+    alert('Environment detected: ' + JSON.stringify({
+                                        alasqlPath: alasql.path,
+                                        isBrowser: alasql.utils.isBrowser,
+                                        isCordova: alasql.utils.isCordova,
+                                        isMeteor: alasql.utils.isMeteor,
+                                        isMeteorClient: alasql.utils.isMeteorClient,
+                                        isMeteorServer: alasql.utils.isMeteorServer,
+                                        isNode: alasql.utils.isNode,
+                                        isWebWorker: alasql.utils.isWebWorker,
+                                        resView:res
+                                    },null,4));
+     mybase.exec("SELECT * INTO CSV('prubq.csv') FROM one");
+     
+     
     //validate field, firs is not empty
      var name=$('#name').val();
      var dateCreation=$('#dateCreation').val();
