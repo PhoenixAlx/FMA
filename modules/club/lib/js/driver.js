@@ -24,7 +24,9 @@
 	console.log(res);
 	var data = [["Minsk",100000], ["Riga",200000]];
 	alasql("SELECT * INTO CSV('cities.csv') FROM ?",[data]);
-    mybase.exec("SELECT * INTO CSV('prubq.csv') FROM one");
+    
+    var pathSecure=alasql.path;
+    alasql.path="";
     alert('Environment detected: ' + JSON.stringify({
                                         alasqlPath: alasql.path,
                                         isBrowser: alasql.utils.isBrowser,
@@ -35,6 +37,7 @@
                                         isNode: alasql.utils.isNode,
                                         isWebWorker: alasql.utils.isWebWorker
                                     },null,4));
+     mybase.exec("SELECT * INTO CSV('prubq.csv') FROM one");
     // Insert two rows: (1,111) and (2,222)
     
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
