@@ -25,8 +25,7 @@
 	var data = [["Minsk",100000], ["Riga",200000]];
 	alasql("SELECT * INTO CSV('cities.csv') FROM ?",[data]);
     
-    var pathSecure=alasql.path;
-    alasql.path="";
+
     alert('Environment detected: ' + JSON.stringify({
                                         alasqlPath: alasql.path,
                                         isBrowser: alasql.utils.isBrowser,
