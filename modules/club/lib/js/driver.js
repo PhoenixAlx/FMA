@@ -61,7 +61,7 @@ function backPrincipal(){
     window.open("../../fma.html","_self");
     return 0;
 }
-window.onload=loadInit();
+
 function validate_date(dateInput){
 
     var patron=new RegExp("^(19|20)+([0-9]{2})([-])([0-9]{1,2})([-])([0-9]{1,2})$");
@@ -107,6 +107,11 @@ function save(){
      }else{
          errorMSG.innerHTML="";
      }//validate name that it isn't on database
+     var mybase = new alasql.Database('FMADB');
+     console.log(mybase);
+     var res = mybase.exec("SELECT * FROM clubs");
+     alert(res);
+     //clubs maybe 
      
      /*       
      
@@ -115,3 +120,4 @@ function save(){
 	var res = mybase.exec("SELECT * FROM one");
     */
 }
+window.onload=loadInit();
