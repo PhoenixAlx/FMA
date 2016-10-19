@@ -1,64 +1,57 @@
-<html>
-<body>
+<html><head><title>JavaScript SQL Text Editor</title>
+<script language="javascript" type="text/javascript" src="FancyToolbar.js"></script>
+<script language="javascript" type="text/javascript" src="SQLStore.js"></script>
+<link rel="stylesheet" type="text/css" href="FancyToolbar.css">
  
-<table>
-    <tr><td>Text to Save:</td></tr>
-    <tr>
-        <td colspan="3">
-            <textarea id="inputTextToSave" cols="80" rows="25"></textarea>
-        </td>
-    </tr>
-    <tr>
-        <td>Filename to Save As:</td>
-        <td><input id="inputFileNameToSaveAs"></input></td>
-        <td><button onclick="saveTextAsFile()">Save Text to File</button></td>
-    </tr>
-    <tr>
-        <td>Select a File to Load:</td>
-        <td><input type="file" id="fileToLoad"></td>
-        <td><button onclick="loadFileAsText()">Load Selected File</button><td>
-    </tr>
-</table>
- 
-<script type="text/javascript">
- 
-function saveTextAsFile()
-{
-    var textToSave = document.getElementById("inputTextToSave").value;
-    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
-    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
- 
-    var downloadLink = document.createElement("a");
-    downloadLink.download = fileNameToSaveAs;
-    downloadLink.innerHTML = "Download File";
-    downloadLink.href = textToSaveAsURL;
-    downloadLink.onclick = destroyClickedElement;
-    downloadLink.style.display = "none";
-    document.body.appendChild(downloadLink);
- 
-    downloadLink.click();
+<style>
+body {
+    // margin: 80px;
+    // background-color: rgb(153, 255, 255);
 }
  
-function destroyClickedElement(event)
-{
-    document.body.removeChild(event.target);
+iframe.editable {
+    width: 80%;
+    height: 300px;
+    margin-top: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
  
-function loadFileAsText()
-{
-    var fileToLoad = document.getElementById("fileToLoad").files[0];
- 
-    var fileReader = new FileReader();
-    fileReader.onload = function(fileLoadedEvent) 
-    {
-        var textFromFileLoaded = fileLoadedEvent.target.result;
-        document.getElementById("inputTextToSave").value = textFromFileLoaded;
-    };
-    fileReader.readAsText(fileToLoad, "UTF-8");
+table.filetable {
+    border-collapse: collapse;
 }
  
-</script>
+tr.filerow {
+    border-collapse: collapse;
+}
+ 
+td.filelinkcell {
+    border-collapse: collapse;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #808080;
+}
+ 
+td.filenamecell {
+    border-collapse: collapse;
+    padding-right: 20px;
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #808080;
+    border-left: 1px solid #808080;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+</style>
+ 
+</head><body onload="initDB(); setupEventListeners(); chooseDialog();">
+ 
+<div id="controldiv"></div>
+<iframe id="contentdiv" style="display: none" class="editable"></iframe>
+ 
+<div id="origcontentdiv" style="display: none"></div>
+<div id="tempdata"></div>
+ 
  
 </body>
 </html>
