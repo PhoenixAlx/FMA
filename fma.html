@@ -1,57 +1,55 @@
-<html><head><title>JavaScript SQL Text Editor</title>
-<script language="javascript" type="text/javascript" src="FancyToolbar.js"></script>
-<script language="javascript" type="text/javascript" src="SQLStore.js"></script>
-<link rel="stylesheet" type="text/css" href="FancyToolbar.css">
- 
-<style>
-body {
-    // margin: 80px;
-    // background-color: rgb(153, 255, 255);
-}
- 
-iframe.editable {
-    width: 80%;
-    height: 300px;
-    margin-top: 60px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
- 
-table.filetable {
-    border-collapse: collapse;
-}
- 
-tr.filerow {
-    border-collapse: collapse;
-}
- 
-td.filelinkcell {
-    border-collapse: collapse;
-    border-right: 1px solid #808080;
-    border-bottom: 1px solid #808080;
-    border-top: 1px solid #808080;
-}
- 
-td.filenamecell {
-    border-collapse: collapse;
-    padding-right: 20px;
-    border-bottom: 1px solid #808080;
-    border-top: 1px solid #808080;
-    border-left: 1px solid #808080;
-    padding-left: 10px;
-    padding-right: 30px;
-}
-</style>
- 
-</head><body onload="initDB(); setupEventListeners(); chooseDialog();">
- 
-<div id="controldiv"></div>
-<iframe id="contentdiv" style="display: none" class="editable"></iframe>
- 
-<div id="origcontentdiv" style="display: none"></div>
-<div id="tempdata"></div>
- 
- 
-</body>
+<!DOCTYPE html>
+<!--
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+-->
+
+<html>
+   <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="lib/css/format.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
+    <script type="text/javascript" src="lib/js/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/js/alasql.js"></script>
+        <script type="text/javascript" src="lib/js/driver.js"></script>
+    <title>Football Manager Associaton</title>
+       
+   </head>
+   <body >
+       <div class="container theme-showcase" role="main">
+            <div class="page-header">
+                <h1 class="text-center titleApp"  ><span  class ="letterTitleApp"  >F</span><span  class="text-success" >ootball</span> <span class ="letterTitleApp"  >M</span><span  class="text-success" >anager</span> <span  class ="letterTitleApp"  >A</span><span  class="text-success" >ssociation</span></h1>
+            </div>
+            <p>
+            
+                <button type="button" class="btn btn-lg btn-primary btn-block  btn-lg"  onclick="goModule('club')"><span class ="sizeFontButtonApp">PEÑAS</span></button>
+            </p>
+            <p>
+            
+                <button type="button" class="btn btn-lg btn-success btn-block  btn-lg disabled"  onclick="goModule('club')"><span class ="sizeFontButtonApp">BACKUP</span></button>
+            </p>
+            <p>
+            
+                <button type="button" class="btn btn-lg btn-info btn-block  btn-lg disabled"  onclick="goModule('club')"><span class ="sizeFontButtonApp">ACERCA DE</span></button>
+            </p>
+      </div>
+       
+   </body>
 </html>
