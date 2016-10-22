@@ -1,4 +1,8 @@
 [{
     "module": "main",
-    "moduleBefore": "",
-}] 
+    "subModule":[],
+    "jsFile":"",
+    "cssFile":"",
+    "jsInit":"",
+    "moduleBefore": ""
+}]
