@@ -1,6 +1,6 @@
 [{
     "module": "club",
-    "subModule": "new"
+    "subModule": "new",
     "jsFile":"lib/js/club.js",
     "cssFile":"lib/css/club.css",
     "jsInit":"loadInit"
