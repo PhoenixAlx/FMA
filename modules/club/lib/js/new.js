@@ -63,7 +63,6 @@ function save(){
 		 var name=$('#name').val();
 		 var dateCreation=$('#dateCreation').val();
 		 var errorMSG=document.getElementById("errorMSG");
-		 clubs=loadClubs();
 		 var namesClubs=Object.keys(clubs);
 		 if ($.trim(name) == ""){
 			 errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
