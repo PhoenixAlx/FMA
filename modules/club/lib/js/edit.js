@@ -31,12 +31,12 @@ function createSelectClub(){
 		 //validate field, firs is not empty
 		 var namesClubs=Object.keys(clubs);
 		 var numberClubs=Object.keys(clubs).length;
-		 var newOptions="";
+		 var newOptions='<option id="nullOption" value="" selected></option>';
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
 			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+'">'+nameClub+'</option>';
-			 $("#"+nameClub).each(function(){
+			 $("#"+nameClub).focus(function(){
 					loadInput(nameClub,dateCreation)
 			 });
 		 }
