@@ -58,7 +58,7 @@ function validate_date(dateInput){
 function save(){
     
 
-	loadClubs(function(clubs){
+	loadClubs({},function(clubs){
 		 //validate field, firs is not empty
 		 var name=$('#name').val();
 		 var dateCreation=$('#dateCreation').val();
