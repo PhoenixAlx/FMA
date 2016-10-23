@@ -118,7 +118,7 @@ function update(){
 		 }else{
 			 errorMSG.innerHTML="";
 			 updateClub(name,dateCreation);
-			 createSelectClub();
+			 goSubModule('edit');
 		 }//validate name that it isn't on database
 	
      
