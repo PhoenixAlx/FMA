@@ -98,11 +98,17 @@ function update(){
     
 
 	loadClubs(function(clubs){
-
+		 //validate field, firs is not empty
+		 console.log("clubs");
+		 console.log(clubs);
 		 var name=$('#name').val();
 		 var dateCreation=$('#dateCreation').val();
 		 var errorMSG=document.getElementById("errorMSG");
 		 var namesClubs=Object.keys(clubs);
+		 console.log("namesClubs");
+		 console.log(namesClubs);
+		 console.log("dateCreation");
+		 console.log(dateCreation);
 		 if ($.trim(name) == ""){
 			 errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
 		 }else if ($.trim(dateCreation) == ""){
