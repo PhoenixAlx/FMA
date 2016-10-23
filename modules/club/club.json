@@ -2,6 +2,6 @@
     "module": "club",
     "jsFile":"lib/js/club.js",
     "cssFile":"lib/css/club.css",
-    "jsInit":"loadInit"
+    "jsInit":""
     
 }]
