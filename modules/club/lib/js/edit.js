@@ -40,7 +40,9 @@ function createSelectClub(){
 		 }
 		 $("#selectClub").html(newOptions);
 		 $('select').on('change', function() {
-			  alert( this.value ); // or $(this).val()
+				if ($(this).val()!=""){
+					alert( $(this).id ); // or $(this).val()
+				}
 			});
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
