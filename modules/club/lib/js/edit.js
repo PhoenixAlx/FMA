@@ -31,27 +31,24 @@ function createSelectClub(){
 		 //validate field, firs is not empty
 		 var namesClubs=Object.keys(clubs);
 		 var numberClubs=Object.keys(clubs).length;
-		 var newOptions='<option id="nullOption" value="" selected></option>';
+		 var newOptions='<option id="nullOption" value="" selected>Peñas</option>';
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
-			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+'">'+nameClub+'</option>';
+			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+"*"+dateCreation+'">'+nameClub+'</option>';
 			 
 		 }
 		 $("#selectClub").html(newOptions);
 		 $('select').on('change', function() {
 				if ($(this).val()!=""){
-					alert( $(this).id ); // or $(this).val()
+					datasClub=$(this).val();
+					arrayDatasClub=datasClub.split(" ") // or $(this).val()
+					name=arrayDatasClub[0];
+					dateCreation=arrayDatasClub[1];
+					loadInput(name,dateCreation)
 				}
 			});
-		 for (var i=0;i<numberClubs;i++){
-			 nameClub=namesClubs[i];
-			 dateCreation=clubs[nameClub]["dateCreation"];
-			 $("#"+nameClub).blur(function(){
-					alert(nameClub+dateCreation);
-					loadInput(nameClub,dateCreation)
-			 });
-		 }
+		 
 		 
 		
 	});
