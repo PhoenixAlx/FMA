@@ -31,7 +31,7 @@ function createSelectClub(){
 		 //validate field, firs is not empty
 		 var namesClubs=Object.keys(clubs);
 		 var numberClubs=Object.keys(clubs).length;
-		 var newOptions='<option id="nullOption" value="" selected><b>TUS PEÑAS</b></option>';
+		 var newOptions='<option id="nullOption" value="" selected>TUS PEÑAS</option>';
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
@@ -93,7 +93,8 @@ function validate_date(dateInput){
     return false;
 
 }
-function save(){
+
+function update(){
     
 
 	loadClubs(function(clubs){
@@ -118,7 +119,8 @@ function save(){
 			 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
 		 }else{
 			 errorMSG.innerHTML="";
-			 insertClubs(name,dateCreation);
+			 updateClub(name,dateCreation);
+			 createSelectClub();
 		 }//validate name that it isn't on database
 	});
      
