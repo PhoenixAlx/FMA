@@ -31,7 +31,7 @@ function createSelectClub(){
 		 //validate field, firs is not empty
 		 var namesClubs=Object.keys(clubs);
 		 var numberClubs=Object.keys(clubs).length;
-		 var newOptions='<option id="nullOption" value="" selected>Peñas</option>';
+		 var newOptions='<option id="nullOption" value="" selected><b>TUS PEÑAS/b></option>';
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
