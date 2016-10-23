@@ -23,7 +23,26 @@
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
      $('#dateCreation').datepicker({
     });
+    createSelectClub();
+    
 }
+function createSelectClub(){
+	loadClubs(function(clubs){
+		 //validate field, firs is not empty
+		 var namesClubs=Object.keys(clubs);
+		 var numberClubs=Object.keys(clubs).length;
+		 var newOptions="";
+		 for (var i=0;i<numberClubs;i++){
+			 nameclub=namesClubs[i];
+			 newOptions=newOptions+'<option value="'+nameclub+'">'+nameclub+'</option>';
+			 
+		 }
+		 $("#selectClub").html(newOptions);
+		
+	});
+	
+}
+
 function loadDatabase(){
      
     initDB();
@@ -60,11 +79,16 @@ function save(){
 
 	loadClubs(function(clubs){
 		 //validate field, firs is not empty
+		 console.log("clubs");
+		 console.log(clubs);
 		 var name=$('#name').val();
 		 var dateCreation=$('#dateCreation').val();
 		 var errorMSG=document.getElementById("errorMSG");
 		 var namesClubs=Object.keys(clubs);
-
+		 console.log("namesClubs");
+		 console.log(namesClubs);
+		 console.log("dateCreation");
+		 console.log(dateCreation);
 		 if ($.trim(name) == ""){
 			 errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
 		 }else if ($.trim(dateCreation) == ""){

@@ -1,0 +1,8 @@
+[{
+    "module": "club",
+    "subModule": "edit",
+    "jsFile":"lib/js/edit.js",
+    "cssFile":"lib/css/club.css",
+    "jsInit":"loadInit"
+    
+}]
