@@ -105,6 +105,8 @@ function update(){
 		 var dateCreation=$('#dateCreation').val();
 		 var errorMSG=document.getElementById("errorMSG");
 		 var namesClubs=Object.keys(clubs);
+		 console.log("name");
+		 console.log(name);
 		 console.log("namesClubs");
 		 console.log(namesClubs);
 		 console.log("dateCreation");
@@ -115,6 +117,8 @@ function update(){
 			 errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
 		 }else if ( validate_date(dateCreation)){
 			 errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
+		 }else if (namesClubs.indexOf(name)>-1){
+			 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
 		 }else{
 			 errorMSG.innerHTML="";
 			 updateClub(name,dateCreation);
