@@ -42,9 +42,13 @@ function createSelectClub(){
 		 $('select').on('change', function() {
 				if ($(this).val()!=""){
 					datasClub=$(this).val();
-					arrayDatasClub=datasClub.split(" ") // or $(this).val()
+					arrayDatasClub=datasClub.split("*") // or $(this).val()
 					name=arrayDatasClub[0];
 					dateCreation=arrayDatasClub[1];
+					loadInput(name,dateCreation)
+				}else{
+					name="";
+					dateCreation="";
 					loadInput(name,dateCreation)
 				}
 			});
