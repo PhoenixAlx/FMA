@@ -34,15 +34,21 @@ function createSelectClub(){
 		 var newOptions="";
 		 for (var i=0;i<numberClubs;i++){
 			 nameclub=namesClubs[i];
-			 newOptions=newOptions+'<option value="'+nameclub+'">'+nameclub+'</option>';
-			 
+			 dateCreation=clubs[nameClub]["dateCreation"];
+			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameclub+'">'+nameclub+'</option>';
+			 $("#"+nameClub).each(function(){
+					loadInput(nameClub,dateCreation)
+			 });
 		 }
 		 $("#selectClub").html(newOptions);
 		
 	});
 	
 }
-
+function loadInput(name,dateCreation){
+	var name=$('#name').val(name);
+	var dateCreation=$('#dateCreation').val(dateCreation);
+}
 function loadDatabase(){
      
     initDB();
