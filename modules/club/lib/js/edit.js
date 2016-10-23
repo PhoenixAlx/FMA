@@ -36,7 +36,8 @@ function createSelectClub(){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
 			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+'">'+nameClub+'</option>';
-			 $("#"+nameClub).focus(function(){
+			 $("#"+nameClub).blur(function(){
+					alert(nameClub+dateCreation);
 					loadInput(nameClub,dateCreation)
 			 });
 		 }
