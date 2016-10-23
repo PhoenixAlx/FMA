@@ -60,8 +60,8 @@ function save(){
 
 	loadClubs({},function(value,clubs){
 		 //validate field, firs is not empty
-		 console.logs("clubs");
-		 console.logs(clubs);
+		 console.log("clubs");
+		 console.log(clubs);
 		 var name=$('#name').val();
 		 var dateCreation=$('#dateCreation').val();
 		 var errorMSG=document.getElementById("errorMSG");
