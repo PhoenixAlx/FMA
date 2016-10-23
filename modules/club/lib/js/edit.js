@@ -33,9 +33,9 @@ function createSelectClub(){
 		 var numberClubs=Object.keys(clubs).length;
 		 var newOptions="";
 		 for (var i=0;i<numberClubs;i++){
-			 nameclub=namesClubs[i];
+			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
-			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameclub+'">'+nameclub+'</option>';
+			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+'">'+nameClub+'</option>';
 			 $("#"+nameClub).each(function(){
 					loadInput(nameClub,dateCreation)
 			 });
