@@ -97,7 +97,7 @@ function validate_date(dateInput){
 function update(){
     
 
-	loadClubs(function(clubs){
+	
 		 //validate field, firs is not empty
 		 console.log("clubs");
 		 console.log(clubs);
@@ -115,14 +115,12 @@ function update(){
 			 errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
 		 }else if ( validate_date(dateCreation)){
 			 errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
-		 }else if (namesClubs.indexOf(name)>-1){
-			 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
 		 }else{
 			 errorMSG.innerHTML="";
 			 updateClub(name,dateCreation);
 			 createSelectClub();
 		 }//validate name that it isn't on database
-	});
+	
      
      
      //clubs maybe 
