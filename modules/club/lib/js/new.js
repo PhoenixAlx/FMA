@@ -58,28 +58,26 @@ function validate_date(dateInput){
 function save(){
     
 
-	
-
-      
-
-    //validate field, firs is not empty
-     var name=$('#name').val();
-     var dateCreation=$('#dateCreation').val();
-     var errorMSG=document.getElementById("errorMSG");
-     var clubs=loadClubs();
-     var namesClubs=Object.keys(clubs);
-     if ($.trim(name) == ""){
-         errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
-     }else if ($.trim(dateCreation) == ""){
-         errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
-     }else if ( validate_date(dateCreation)){
-         errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
-     }else if (namesClubs.indexOf(name)>-1){
-		 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
-	 }else{
-         errorMSG.innerHTML="";
-         insertClubs(name,dateCreation);
-     }//validate name that it isn't on database
+	loadClubs(function(clubs){
+		 //validate field, firs is not empty
+		 var name=$('#name').val();
+		 var dateCreation=$('#dateCreation').val();
+		 var errorMSG=document.getElementById("errorMSG");
+		 clubs=loadClubs();
+		 var namesClubs=Object.keys(clubs);
+		 if ($.trim(name) == ""){
+			 errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
+		 }else if ($.trim(dateCreation) == ""){
+			 errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
+		 }else if ( validate_date(dateCreation)){
+			 errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
+		 }else if (namesClubs.indexOf(name)>-1){
+			 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
+		 }else{
+			 errorMSG.innerHTML="";
+			 insertClubs(name,dateCreation);
+		 }//validate name that it isn't on database
+	});
      
      
      //clubs maybe 
