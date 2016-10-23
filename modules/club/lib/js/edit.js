@@ -42,6 +42,15 @@ function createSelectClub(){
 			 });
 		 }
 		 $("#selectClub").html(newOptions);
+		 for (var i=0;i<numberClubs;i++){
+			 nameClub=namesClubs[i];
+			 dateCreation=clubs[nameClub]["dateCreation"];
+			 $("#"+nameClub).blur(function(){
+					alert(nameClub+dateCreation);
+					loadInput(nameClub,dateCreation)
+			 });
+		 }
+		 
 		
 	});
 	
