@@ -36,12 +36,12 @@ function createSelectClub(){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
 			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+'">'+nameClub+'</option>';
-			 $("#"+nameClub).blur(function(){
-					alert(nameClub+dateCreation);
-					loadInput(nameClub,dateCreation)
-			 });
+			 
 		 }
 		 $("#selectClub").html(newOptions);
+		 $('select').on('change', function() {
+			  alert( this.value ); // or $(this).val()
+			});
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
