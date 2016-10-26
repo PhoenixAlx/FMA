@@ -1,6 +1,6 @@
 [{
     "modulesActive":["main","clubs"] ,
     "pathModules": "modules",
-    "message"="",
-    "saveMessage"=false
+    "message":"",
+    "saveMessage":false
 }]
