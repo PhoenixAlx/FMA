@@ -23,8 +23,13 @@
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
      $('#dateCreation').datepicker({
     });
-    createSelectClub();
-    
+    var errorMSG=document.getElementById("errorMSG");
+    if (propierties.saveMessage){
+        propierties.saveMessage=false;
+        errorMSG.innerHTML=propierties.message;
+    }else{
+        errorMSG.innerHTML="";
+    }
 }
 function createSelectClub(){
 	loadClubs(function(clubs){
@@ -65,6 +70,7 @@ function loadInput(name,dateCreation,idclub){
 	var name=$('#name').val(name);
 	var dateCreation=$('#dateCreation').val(dateCreation);
     var idclub=$('#idclub').val(idclub);
+    
 }
 function loadDatabase(){
      
@@ -120,8 +126,8 @@ function update(){
 		 }else{
 			 
 			 updateClub(name,dateCreation,idclub,function(){
-
-                    errorMSG.innerHTML="<span> Peña actualizada</span>";
+                     propierties.saveMessage=true;
+                    propierties.message="<span> Peña actualizada</span>";
                     goSubModule('edit');
              });
 			 
@@ -154,7 +160,8 @@ function remove(){
 		 }else{
 			 
 			 removeClub(idclub,function(){
-                    errorMSG.innerHTML="<span> Peña actualizada</span>";
+                    propierties.saveMessage=true;
+                    propierties.message="<span> Peña actualizada</span>";
                     goSubModule('edit');
              });
 			 
@@ -163,4 +170,4 @@ function remove(){
      
   
 }
-window.onload=loadInit();
+//window.onload=loadInit();

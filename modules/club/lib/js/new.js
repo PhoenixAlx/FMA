@@ -23,6 +23,14 @@
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
      $('#dateCreation').datepicker({
     });
+    var errorMSG=document.getElementById("errorMSG");
+    if (propierties.saveMessage){
+        propierties.saveMessage=false;
+        errorMSG.innerHTML=propierties.message;
+    }else{
+        errorMSG.innerHTML="";
+    }
+   
 }
 function loadDatabase(){
      
@@ -74,8 +82,14 @@ function save(){
 		 }else if (namesClubs.indexOf(name)>-1){
 			 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
 		 }else{
-			 errorMSG.innerHTML="";
-			 insertClubs(name,dateCreation);
+			 
+			 insertClubs(name,dateCreation,function(){
+                    propierties.message="Peña añadida";
+                    propierties.saveMessage=true;
+                    
+                    goSubModule('new');
+                 });
+            
 		 }//validate name that it isn't on database
 	});
      
@@ -89,4 +103,4 @@ function save(){
 	var res = mybase.exec("SELECT * FROM one");
     */
 }
-window.onload=loadInit();
+//window.onload=loadInit();
