@@ -35,7 +35,8 @@ function createSelectClub(){
 		 for (var i=0;i<numberClubs;i++){
 			 nameClub=namesClubs[i];
 			 dateCreation=clubs[nameClub]["dateCreation"];
-			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+"*"+dateCreation+'">'+nameClub+'</option>';
+             idclub=clubs[nameClub]["idclub"];
+			 newOptions=newOptions+'<option id="'+nameClub+'" value="'+nameClub+"*"+dateCreation+"*"+idclub+'">'+nameClub+'</option>';
 			 
 		 }
 		 $("#selectClub").html(newOptions);
@@ -45,11 +46,13 @@ function createSelectClub(){
 					arrayDatasClub=datasClub.split("*") // or $(this).val()
 					name=arrayDatasClub[0];
 					dateCreation=arrayDatasClub[1];
-					loadInput(name,dateCreation)
+                    idclub=arrayDatasClub[2];
+					loadInput(name,dateCreation,idclub)
 				}else{
 					name="";
 					dateCreation="";
-					loadInput(name,dateCreation)
+                    idclub="";
+					loadInput(name,dateCreation,idclub)
 				}
 			});
 		 
@@ -58,9 +61,10 @@ function createSelectClub(){
 	});
 	
 }
-function loadInput(name,dateCreation){
+function loadInput(name,dateCreation,idclub){
 	var name=$('#name').val(name);
 	var dateCreation=$('#dateCreation').val(dateCreation);
+    var idclub=$('#idclub').val(idclub);
 }
 function loadDatabase(){
      
@@ -103,37 +107,60 @@ function update(){
 		 console.log(clubs);
 		 var name=$('#name').val();
 		 var dateCreation=$('#dateCreation').val();
+         var idclub=$('#idclub').val();
 		 var errorMSG=document.getElementById("errorMSG");
 		 var namesClubs=Object.keys(clubs);
-		 console.log("name");
-		 console.log(name);
-		 console.log("namesClubs");
-		 console.log(namesClubs);
-		 console.log("dateCreation");
-		 console.log(dateCreation);
+
 		 if ($.trim(name) == ""){
 			 errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
 		 }else if ($.trim(dateCreation) == ""){
 			 errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
 		 }else if ( validate_date(dateCreation)){
 			 errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
-		 }else if (namesClubs.indexOf(name)>-1){
-			 errorMSG.innerHTML="<span> Esa peña ya existe</span>";
 		 }else{
-			 errorMSG.innerHTML="";
-			 updateClub(name,dateCreation);
-			 goSubModule('edit');
+			 
+			 updateClub(name,dateCreation,idclub,function(){
+
+                    errorMSG.innerHTML="<span> Peña actualizada</span>";
+                    goSubModule('edit');
+             });
+			 
 		 }//validate name that it isn't on database
 	});
      
-     
-     //clubs maybe 
-     
-     /*       
-     
-    	var mybase = new alasql.Database('mybase');
+  
+}
+function remove(){
+    
 
-	var res = mybase.exec("SELECT * FROM one");
-    */
+	loadClubs(function(clubs){
+		 //validate field, firs is not empty
+		 console.log("clubs");
+		 console.log(clubs);
+		 var name=$('#name').val();
+		 var dateCreation=$('#dateCreation').val();
+         var idclub=$('#idclub').val();
+		 var errorMSG=document.getElementById("errorMSG");
+		 var namesClubs=Object.keys(clubs);
+
+		 if ($.trim(name) == ""){
+			 errorMSG.innerHTML="<span> El nombre no puede estar en blanco</span>";
+		 }else if ($.trim(dateCreation) == ""){
+			 errorMSG.innerHTML="<span> La fecha no puede estar en blanco</span>";
+		 }else if ( validate_date(dateCreation)){
+			 errorMSG.innerHTML="<span> La fecha no tiene formato válido</span>";
+		 }else if (namesClubs.indexOf(name)<0){
+			 errorMSG.innerHTML="<span> Esa peña no existe</span>";
+		 }else{
+			 
+			 removeClub(idclub,function(){
+                    errorMSG.innerHTML="<span> Peña actualizada</span>";
+                    goSubModule('edit');
+             });
+			 
+		 }//validate name that it isn't on database
+	});
+     
+  
 }
 window.onload=loadInit();
