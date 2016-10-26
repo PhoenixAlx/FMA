@@ -10,6 +10,7 @@
 ### Pantallas
 * Creación de peña.
 * Edición de nombre o poder eliminarla.
+* Gestión de peñas. Donde se enlazarán con el resto de módulos.
 
 ## Módulo gestor de integrantes( fundamental)
 
