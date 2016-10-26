@@ -23,6 +23,7 @@
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
      $('#dateCreation').datepicker({
     });
+
     var errorMSG=document.getElementById("errorMSG");
     if (propierties.saveMessage){
         propierties.saveMessage=false;
@@ -30,6 +31,7 @@
     }else{
         errorMSG.innerHTML="";
     }
+    createSelectClub();
 }
 function createSelectClub(){
 	loadClubs(function(clubs){
@@ -161,7 +163,7 @@ function remove(){
 			 
 			 removeClub(idclub,function(){
                     propierties.saveMessage=true;
-                    propierties.message="<span> Peña actualizada</span>";
+                    propierties.message="<span> Peña eliminada</span>";
                     goSubModule('edit');
              });
 			 
