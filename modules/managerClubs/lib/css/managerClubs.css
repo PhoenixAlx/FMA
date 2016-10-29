@@ -16,18 +16,8 @@
  * 
  */
 
-.titleApp{
-font-size:5em;
-}
-.letterTitleApp{
-color:blue;
-}
-.sizeFontButtonApp{
-font-size:2em ;
-}
-.sizeFontErrorApp{
-font-size:2em;
-}
 
 
-
+.divHidden{
+ display:none;
+}

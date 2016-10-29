@@ -28,7 +28,6 @@
         propierties.saveMessage=false;
         errorMSG.innerHTML=propierties.message;
     }else{
-		
         errorMSG.innerHTML="";
     }
    

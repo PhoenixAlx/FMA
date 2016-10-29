@@ -1,0 +1,7 @@
+[{
+    "module": "managerClubs",
+    "jsFile":"lib/js/managerClubs.js",
+    "cssFile":"lib/css/managerClubs.css",
+    "jsInit":"loadInit"
+    
+}]
