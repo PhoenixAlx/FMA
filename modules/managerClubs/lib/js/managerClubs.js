@@ -17,7 +17,7 @@
  */
  function loadInit(){
 
-	console.log("loadInit gestor peñas")
+
  
     createSelectClub();
 }
@@ -42,9 +42,12 @@ function createSelectClub(){
 					name=arrayDatasClub[0];
 					dateCreation=arrayDatasClub[1];
                     idclub=arrayDatasClub[2];
+                    propierties.idclub=idclub;
+                    propierties.nameClub=nameClub;
 					loadInput(true)
 				}else{
-
+					propierties.idclub="";
+                    propierties.nameClub="";
 					loadInput(false)
 				}
 			});

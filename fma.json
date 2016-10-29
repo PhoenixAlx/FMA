@@ -2,5 +2,7 @@
     "modulesActive":["main","clubs","managerClubs"] ,
     "pathModules": "modules",
     "message":"",
-    "saveMessage":false
+    "saveMessage":false,
+    "idClub":"",
+    "nameClub":""
 }]
