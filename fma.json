@@ -4,5 +4,6 @@
     "message":"",
     "saveMessage":false,
     "idClub":"",
-    "nameClub":""
+    "nameClub":"",
+    "develop":true
 }]
