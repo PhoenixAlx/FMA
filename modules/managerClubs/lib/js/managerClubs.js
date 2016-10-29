@@ -42,12 +42,10 @@ function createSelectClub(){
 					name=arrayDatasClub[0];
 					dateCreation=arrayDatasClub[1];
                     idclub=arrayDatasClub[2];
-					loadInput(name,dateCreation,idclub)
+					loadInput(true)
 				}else{
-					name="";
-					dateCreation="";
-                    idclub="";
-					loadInput(name,dateCreation,idclub)
+
+					loadInput(false)
 				}
 			});
 		 
@@ -55,4 +53,13 @@ function createSelectClub(){
 		
 	});
 	
+}
+function loadInput(activeButtons){
+	if (activeButtons){
+		$('#divManagerClubs').show();
+	}else{
+		$('#divManagerClubs').hide();
+	}
+	
+    
 }
