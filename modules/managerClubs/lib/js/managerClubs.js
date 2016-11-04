@@ -39,7 +39,7 @@ function createSelectClub(){
 				if ($(this).val()!=""){
 					datasClub=$(this).val();
 					arrayDatasClub=datasClub.split("*") // or $(this).val()
-					name=arrayDatasClub[0];
+					nameClub=arrayDatasClub[0];
 					dateCreation=arrayDatasClub[1];
                     idclub=arrayDatasClub[2];
                     propierties.idclub=idclub;
