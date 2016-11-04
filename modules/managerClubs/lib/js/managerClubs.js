@@ -44,6 +44,8 @@ function createSelectClub(){
                     idclub=arrayDatasClub[2];
                     propierties.idclub=idclub;
                     propierties.nameClub=nameClub;
+                    console.log("propierties.nameClub=nameClub;");
+                    console.log(propierties.nameClub);
 					loadInput(true)
 				}else{
 					propierties.idclub="";
