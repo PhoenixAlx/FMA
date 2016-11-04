@@ -37,7 +37,7 @@
 }
 function loadNameClub(){
      var namberClub=document.getElementById("namberClub");
-     errorMSG.innerHTML=propierties.nameClub;
+     namberClub.innerHTML=propierties.nameClub;
      console.log(propierties.nameClub);
     //$("#namberClub").html(propierties.nameClub);
 }
