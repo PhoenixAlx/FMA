@@ -21,7 +21,9 @@
     // Insert two rows: (1,111) and (2,222)
     
      $.fn.datepicker.defaults.format = "dd/mm/yyyy";
-     $('#dateCreation').datepicker({
+     $('#dateAdmission').datepicker({
+    });
+    $('#dateBorn').datepicker({
     });
     var errorMSG=document.getElementById("errorMSG");
     if (propierties.saveMessage){
@@ -31,7 +33,10 @@
 		
         errorMSG.innerHTML="";
     }
-   
+   loadNameClub
+}
+function loadNameClub(){
+    $("#namberClub").html(propierties.nameClub);
 }
 function loadDatabase(){
      
