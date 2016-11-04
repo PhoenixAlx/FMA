@@ -2,7 +2,7 @@
     "module": "member",
     "subModule": "new",
     "jsFile":"lib/js/new.js",
-    "cssFile":"lib/css/club.css",
+    "cssFile":"lib/css/member.css",
     "jsInit":"loadInit"
     
 }]
