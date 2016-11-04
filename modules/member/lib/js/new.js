@@ -33,7 +33,7 @@
 		
         errorMSG.innerHTML="";
     }
-   loadNameClub
+   loadNameClub();
 }
 function loadNameClub(){
      var namberClub=document.getElementById("namberClub");
