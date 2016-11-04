@@ -36,7 +36,10 @@
    loadNameClub
 }
 function loadNameClub(){
-    $("#namberClub").html(propierties.nameClub);
+     var namberClub=document.getElementById("namberClub");
+     errorMSG.innerHTML=propierties.nameClub;
+     console.log(propierties.nameClub);
+    //$("#namberClub").html(propierties.nameClub);
 }
 function loadDatabase(){
      
