@@ -1,5 +1,5 @@
 [{
-    "modulesActive":["main","clubs","managerClubs"] ,
+    "modulesActive":["main","clubs","managerClubs","member"] ,
     "pathModules": "modules",
     "message":"",
     "saveMessage":false,

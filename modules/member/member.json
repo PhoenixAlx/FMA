@@ -1,0 +1,7 @@
+[{
+    "module": "member",
+    "jsFile":"lib/js/member.js",
+    "cssFile":"lib/css/member.css",
+    "jsInit":""
+    
+}]

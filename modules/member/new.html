@@ -1,0 +1,98 @@
+
+<!--
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+-->
+
+
+       <div class="container theme-showcase" role="main">
+            <div class="page-header">
+                <h1 class="text-center titleApp"  ><span  class ="letterTitleApp"  >F</span><span  class="text-success" >ootball</span> <span class ="letterTitleApp"  >M</span><span  class="text-success" >anager</span> <span  class ="letterTitleApp"  >A</span><span  class="text-success" >ssociation</span></h1>
+                <h2 class="text-center titleApp"  ><span  class="text-success" >Nuevo miembro en </span><span id="namberClub" class="text-success" ></span> </h2>
+            </div>
+            
+            <p>
+                <label for="textName" class ="sizeFontButtonApp">Nombre</label>   
+                <input type="text" name="name" id="name" value=""  class=" btn-block  btn-lg ">
+                
+                
+            </p>
+            <p>
+                <label for="textName" class ="sizeFontButtonApp">Apellidos</label>   
+                <input type="text" name="lastName" id="lastName" value=""  class=" btn-block  btn-lg ">
+                
+                
+            </p>
+             <p>
+                <label for="dateBorn" class ="sizeFontButtonApp">Fecha de nacimiento</label>   
+                <div class="input-group date" data-provide="datepicker" id="divDateBorn">
+                    <input type="text" name="dateBorn" id ="dateBorn" class="form-control btn-block  btn-lg "  >
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                
+            
+                
+            </p>
+             <p>
+                <label for="textName" class ="sizeFontButtonApp">Escoge posición</label>   
+                <input type="hidden" name="position" id="position" value=""  class=" btn-block  btn-lg ">
+                <div class="checkbox">
+                    <input type="checkbox" name="positionCheck" value="goalkeeper">Portero<br>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="positionCheck" value="defense" checked>Defensa<br>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="positionCheck" value="midfielder">Centrocampista<br>
+                </div>
+                <div class="checkbox">
+                    <input type="checkbox" name="positionCheck" value="forward" checked>Delantero<br>
+                </div>
+                
+                
+                
+            </p>
+            <p>
+                <label for="dateAdmission" class ="sizeFontButtonApp">Fecha de admisión</label>   
+                <div class="input-group date" data-provide="datepicker" id="divDateAdmission">
+                    <input type="text" name="dateAdmission" id ="dateAdmission" class="form-control btn-block  btn-lg "  >
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                
+            
+                
+            </p>
+            <p id="errorMSG" name="errorMSG"  class="text-danger bg-danger sizeFontErrorApp">
+
+                
+                
+            </p>
+            
+            <p>
+            
+                <button type="button" class="btn btn-lg btn-success btn-block  btn-lg "  onclick="save()" ><span class ="sizeFontButtonApp">GUARDAR</span></button>
+            </p>
+            <p>
+            
+                <button type="button" class="btn btn-lg btn-warning btn-block  btn-lg "  onclick="goModule('member')"><span class ="sizeFontButtonApp">VOLVER</span></button>
+            </p>
+      </div>
+       
+   
