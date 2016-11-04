@@ -112,4 +112,4 @@ function save(){
 	var res = mybase.exec("SELECT * FROM one");
     */
 }
-//window.onload=loadInit();
+window.onload=loadInit();
